@@ -7,7 +7,6 @@
 #include <nw4r/g3d/res/g3d_resmdl.h>
 #include <nw4r/math.h>
 
-
 namespace nw4r {
 namespace g3d {
 
@@ -242,7 +241,7 @@ public:
     static const u32 SIGNATURE = FOURCC('C', 'H', 'R', '0');
 #if defined(VERSION_RSPE01_00)
     static const int REVISION = 3;
-#elif defined(VERSION_RSPE01_01)
+#elif defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
     static const int REVISION = 4;
 #endif
 

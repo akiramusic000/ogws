@@ -11,7 +11,7 @@ extern "C" {
 typedef struct RFLMiddleDB;
 
 BOOL RFLiCheckValidInfo(const RFLiCharInfo* info);
-#if defined(VERSION_RSPE01_01)
+#if defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
 BOOL RFLiIsValidOnNAND(const RFLiCharInfo* info);
 #endif
 BOOL RFLiIsSameFaceCore(const RFLiCharInfo* lhs, const RFLiCharInfo* rhs);

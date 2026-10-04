@@ -137,7 +137,7 @@ static void defaultOptionalCommandChecker(DVDCommandBlock* block,
 #if defined(VERSION_RSPE01_00)
 const char* __DVDVersion =
     "<< RVL_SDK - DVD \trelease build: Sep 28 2006 18:57:56 (0x4200_60422) >>";
-#elif defined(VERSION_RSPE01_01)
+#elif defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
 const char* __DVDVersion =
     "<< RVL_SDK - DVD \trelease build: Apr 24 2007 11:44:29 (0x4199_60831) >>";
 #endif

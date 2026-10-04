@@ -76,7 +76,7 @@ public:
 
     void Calc(bool onlyBillboard);
     void Draw(const DrawInfo& rInfo);
-#elif defined(VERSION_RSPE01_01)
+#elif defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
     virtual bool Initialize(EffectSystem* pSystem, EmitterResource* pResource,
                             u16 calcRemain); // at 0x10
     virtual Emitter* CreateEmitter(ResEmitter res, u8 drawWeight,

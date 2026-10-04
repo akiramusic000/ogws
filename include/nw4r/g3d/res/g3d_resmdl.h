@@ -123,7 +123,7 @@ public:
     static const u32 SIGNATURE = FOURCC('M', 'D', 'L', '0');
 #if defined(VERSION_RSPE01_00)
     static const int REVISION = 8;
-#elif defined(VERSION_RSPE01_01)
+#elif defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
     static const int REVISION = 9;
 #endif
 

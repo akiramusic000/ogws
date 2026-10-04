@@ -97,7 +97,7 @@ public:
     void UpdateFrm() {
         SetFrm(mFrame + mUpdateRate);
     }
-#elif defined(VERSION_RSPE01_01)
+#elif defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
     void UpdateFrm() {
         SetFrm(mUpdateRate * smBaseUpdateRate + mFrame);
     }
@@ -121,7 +121,7 @@ private:
     f32 mEndFrame;               // at 0xC
     PlayPolicyFunc mpPlayPolicy; // at 0x10
 
-#if defined(VERSION_RSPE01_01)
+#if defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
     static f32 smBaseUpdateRate;
 #endif
 };

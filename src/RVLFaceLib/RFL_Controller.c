@@ -86,7 +86,7 @@ static void validBufferFound_(RFLiCtrlBuf* buf, s32 chan) {
 
 #if defined(VERSION_RSPE01_00)
             if (!RFLiCheckValidInfo(&info)) {
-#elif defined(VERSION_RSPE01_01)
+#elif defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
             if (!RFLiCheckValidInfo(&info) || !RFLiIsValidOnNAND(&info)) {
 #endif
                 memset(&mgr->buffer[chan]->data[i], 0, sizeof(RFLiCharData));

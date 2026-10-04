@@ -35,6 +35,7 @@ DEFAULT_VERSION = 1
 VERSIONS = [
     "RSPE01_00",
     "RSPE01_01",  # USA Rev 1
+    "RHAE01_01",
 ]
 
 parser = argparse.ArgumentParser()
@@ -422,7 +423,7 @@ cflags_hbm = [
 cflags_rp = [
     *cflags_base,
     *cflags_pedantic,
-    "-DPACK_SPORTS",
+    "-DPACK_SPORTS" if config.version.startswith("RSPE01") else "-DPACK_PARTY",
     "-enc SJIS",
     "-inline deferred",
     "-fp_contract on",
@@ -442,6 +443,7 @@ cflags_rp_pch = [
 config.linker_version = {
     "RSPE01_00": "GC/3.0a5",
     "RSPE01_01": "GC/3.0a5.2",
+    "RHAE01_01": "GC/3.0a5.2",
 }[config.version]
 
 

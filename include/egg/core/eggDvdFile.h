@@ -19,7 +19,7 @@ public:
     virtual ~DvdFile(); // at 0x8
 
     virtual bool open(const char* pPath); // at 0xC
-#if defined(VERSION_RSPE01_01)
+#if defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
     virtual bool open(s32 entryNum);                          // at 0x20
     virtual bool open(const char* pPath, void* pMultiHandle); // at 0x24
 #endif

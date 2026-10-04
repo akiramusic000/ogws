@@ -1,0 +1,14 @@
+object_base: orig/RHAE01_01
+object: sys/main.dol
+hash: 0da5e7e51135219f580ad011d1b635bc83569bb9
+symbols: config/RHAE01_01/symbols.txt
+splits: config/RHAE01_01/splits.txt
+mw_comment_version: 14
+
+block_relocations:
+  - source: .data:0x803405b8
+
+extract:
+  - symbol: sStaticSoundArchive__14RPSndStaticMgr
+    binary: rp_Static_sound.brsar
+    header: Pack/RPAudio/rp_Static_sound.brsar.inc

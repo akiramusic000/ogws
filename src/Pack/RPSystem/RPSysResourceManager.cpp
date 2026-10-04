@@ -229,7 +229,7 @@ bool RPSysResourceManager::IsExist(const char* pPath) {
     EGG::DvdFile f;
 #if defined(VERSION_RSPE01_00)
     return f.open(pPath);
-#elif defined(VERSION_RSPE01_01)
+#elif defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
     return f.open(pPath, GetMultiHandle());
 #endif
 }
@@ -546,7 +546,7 @@ u8* RPSysResourceManager::LoadFromDVD(const char* pPath, EGG::Heap* pHeap,
     if (!f.open(pPath)) {
         return NULL;
     }
-#elif defined(VERSION_RSPE01_01)
+#elif defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
     if (!f.open(pPath, GetMultiHandle())) {
         return NULL;
     }

@@ -71,13 +71,13 @@ bool DvdFile::open(const char* pPath) {
     }
 
     return mIsOpen;
-#elif defined(VERSION_RSPE01_01)
+#elif defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
     s32 entryNum = DVDConvertPathToEntrynum(pPath);
     return open(entryNum);
 #endif
 }
 
-#if defined(VERSION_RSPE01_01)
+#if defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
 bool DvdFile::open(const char* pPath, void* pMultiHandle) {
 #pragma unused(pMultiHandle)
 

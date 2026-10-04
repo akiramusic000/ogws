@@ -175,7 +175,7 @@ typedef struct WPADCB {
     WPADCommandQueue extCmdQueue;    // at 0x5EC
 #if defined(VERSION_RSPE01_00)
     WPADCommand extCmdQueueList[8]; // at 0x5F8
-#elif defined(VERSION_RSPE01_01)
+#elif defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
     WPADCommand extCmdQueueList[12]; // at 0x5F8
 #endif
     WPADInfo wpInfo;                   // at 0x838

@@ -54,7 +54,7 @@ typedef enum {
 
     SC_ITEM_MAX
 } SCItemID;
-#elif defined(VERSION_RSPE01_01)
+#elif defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
 typedef enum {
     // IPL settings
     SC_ITEM_IPL_CB,   // Counter bias
