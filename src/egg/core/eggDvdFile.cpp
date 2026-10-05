@@ -44,7 +44,7 @@ void DvdFile::initiate() {
     mAsyncThread = NULL;
 }
 
-#if defined(VERSION_RSPE01_01)
+#if defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
 bool DvdFile::open(s32 entryNum) {
     if (!mIsOpen && entryNum != -1) {
         mIsOpen = DVDFastOpen(entryNum, &mAsyncContext.fileInfo);

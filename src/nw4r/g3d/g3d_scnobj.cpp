@@ -123,7 +123,7 @@ bool ScnObj::SetScnObjOption(u32 option, u32 value) {
         break;
     }
 
-#if defined(VERSION_RSPE01_01)
+#if defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
     case OPTID_ENABLE_CULLING: {
         SetScnObjFlag(SCNOBJFLAG_ENABLE_CULLING, value);
         break;
@@ -184,7 +184,7 @@ bool ScnObj::GetScnObjOption(u32 option, u32* pValue) const {
         break;
     }
 
-#if defined(VERSION_RSPE01_01)
+#if defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
     case OPTID_ENABLE_CULLING: {
         *pValue = TestScnObjFlag(SCNOBJFLAG_ENABLE_CULLING);
         break;

@@ -394,7 +394,7 @@ IScnObjGather::CullingStatus ScnObjGather::Add(ScnObj* pObj, bool opa,
     IScnObjGather::CullingStatus status =
         IScnObjGather::CULLINGSTATUS_INTERSECT;
 
-#if defined(VERSION_RSPE01_01)
+#if defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
     math::IntersectionResult ixResult = math::INTERSECTION_INTERSECT;
 
     if (gpCullingFrustum != NULL) {

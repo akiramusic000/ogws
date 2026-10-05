@@ -17,7 +17,7 @@ BOOL RFLiIsValidOnNAND(const RFLiCharInfo* info);
 BOOL RFLiIsSameFaceCore(const RFLiCharInfo* lhs, const RFLiCharInfo* rhs);
 RFLErrcode RFLiPickupCharInfo(RFLiCharInfo* info, RFLDataSource source,
                               struct RFLMiddleDB* db, u16 index);
-#if defined(VERSION_RSPE01_01)
+#if defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
 BOOL RFLiCheckBirthday(u8 month, u8 day);
 #endif
 

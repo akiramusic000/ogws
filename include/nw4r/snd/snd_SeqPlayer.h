@@ -4,8 +4,8 @@
 
 #include <nw4r/snd/snd_BasicPlayer.h>
 #include <nw4r/snd/snd_DisposeCallback.h>
+#include <nw4r/snd/snd_SeqTrack.h>
 #include <nw4r/snd/snd_SoundThread.h>
-
 #include <nw4r/ut.h>
 
 namespace nw4r {
@@ -94,8 +94,11 @@ public:
     void SetReleasePriorityFix(bool flag);
 
     void SetLocalVariable(int idx, s16 value);
+    s16 GetLocalVariable(int idx) const;
     static void SetGlobalVariable(int idx, s16 value);
+    static s16 GetGlobalVariable(int idx);
 
+    void SetTrackMute(u32 trackFlags, SeqMute mute);
     void SetTrackVolume(u32 trackFlags, f32 volume);
     void SetTrackPitch(u32 trackFlags, f32 pitch);
 

@@ -1189,7 +1189,7 @@ void LightState::LoadLightSet(int id, u32* pDiffColorMask, u32* pDiffAlphaMask,
         *pDiffAlphaMask = mCurrentMaskDiffAlpha;
         *pSpecColorMask = mCurrentMaskSpecColor;
         *pSpecAlphaMask = mCurrentMaskSpecAlpha;
-#elif defined(VERSION_RSPE01_01)
+#elif defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
         if (pDiffColorMask != NULL) {
             *pDiffColorMask = mCurrentMaskDiffColor;
         }
@@ -1692,7 +1692,7 @@ void LoadResTexSrt(const ResTexSrt srt) {
             bool ident = true;
             const TexMtxEffect& rEffect = srt.ref().effect[i];
 
-#if defined(VERSION_RSPE01_01)
+#if defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
             math::MTX34Identity(&mtx);
 #endif
 

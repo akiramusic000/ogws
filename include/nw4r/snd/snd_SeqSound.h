@@ -5,6 +5,7 @@
 #include <nw4r/snd/snd_BasicSound.h>
 #include <nw4r/snd/snd_SeqPlayer.h>
 #include <nw4r/snd/snd_Task.h>
+#include <nw4r/snd/snd_SeqTrack.h>
 
 #include <nw4r/ut.h>
 
@@ -68,11 +69,14 @@ public:
     void SetChannelPriority(int priority);
     void SetReleasePriorityFix(bool flag);
 
+    void SetTrackMute(u32 trackFlags, SeqMute mute);
     void SetTrackVolume(u32 trackFlags, f32 volume);
     void SetTrackPitch(u32 trackFlags, f32 pitch);
 
     bool WriteVariable(int idx, s16 value);
+    bool ReadVariable(int idx, s16* value) const;
     static bool WriteGlobalVariable(int idx, s16 value);
+    static bool ReadGlobalVariable(int idx, s16* value);
 
     void* GetFileStreamBuffer() {
         return mFileStreamBuffer;

@@ -2,6 +2,7 @@
 #define RP_SYSTEM_RESOURCE_MANAGER_H
 #include <Pack/types_pack.h>
 
+#include <Pack/RPParty/RPPartyCommon.h>
 #include <Pack/RPSingleton.h>
 #include <Pack/RPSports/RPSportsCommon.h>
 #include <Pack/RPSystem/RPSysSceneCreator.h>
@@ -339,6 +340,9 @@ private:
 #if defined(PACK_SPORTS)
     //! Sports Pack Mii manager
     RPSportsAppMiiManager* mpAppMiiManager; // at 0x38
+#elif defined(PACK_PARTY)
+    //! Party Pack Mii manager
+    RPPartyAppMiiManager* mpAppMiiManager; // at 0x38
 #endif
 
     //! Extra handle for opening files outside the DVD

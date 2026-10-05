@@ -399,7 +399,7 @@ public:
      */
 #if defined(VERSION_RSPE01_00)
     u8 getGolStandardBest(ECourse course) const;
-#elif defined(VERSION_RSPE01_01)
+#elif defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
     s8 getGolStandardBest(ECourse course) const;
 #endif
     /**
@@ -736,7 +736,7 @@ private:
     //! Best scores on each difficulty
 #if defined(VERSION_RSPE01_00)
     u8 mGolStandardBests[ECourse_Max]; // at 0x290
-#elif defined(VERSION_RSPE01_01)
+#elif defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
     s8 mGolStandardBests[ECourse_Max]; // at 0x290
 #endif
     //! Number of aces hit

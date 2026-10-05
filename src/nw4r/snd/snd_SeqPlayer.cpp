@@ -188,12 +188,28 @@ void SeqPlayer::SetLocalVariable(int idx, s16 value) {
     mLocalVariable[idx] = value;
 }
 
+s16 SeqPlayer::GetLocalVariable(int idx) const {
+    return mLocalVariable[idx];
+}
+
 void SeqPlayer::SetGlobalVariable(int idx, s16 value) {
     if (!mGobalVariableInitialized) {
         InitGlobalVariable();
     }
 
     mGlobalVariable[idx] = value;
+}
+
+s16 SeqPlayer::GetGlobalVariable(int idx) {
+    if (!mGobalVariableInitialized) {
+        InitGlobalVariable();
+    }
+
+    return mGlobalVariable[idx];
+}
+
+void SeqPlayer::SetTrackMute(u32 trackFlags, SeqMute mute) {
+    SetTrackParam<SeqMute>(trackFlags, &SeqTrack::SetMute, mute);
 }
 
 void SeqPlayer::SetTrackVolume(u32 trackFlags, f32 volume) {

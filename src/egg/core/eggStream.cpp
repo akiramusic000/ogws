@@ -211,7 +211,7 @@ void Stream::write_float(f32 value) {
     }
 }
 
-#if defined(VERSION_RSPE01_01)
+#if defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
 DECOMP_FORCEACTIVE(eggStream_cpp_1,
                   "%s");
 #endif

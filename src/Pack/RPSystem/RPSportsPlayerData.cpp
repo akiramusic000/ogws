@@ -503,7 +503,7 @@ void RPSportsPlayerData::setBowTrainingBest(u16 score, EGame game) {
 u8 RPSportsPlayerData::getGolStandardBest(ECourse course) const {
     return mGolStandardBests[course];
 }
-#elif defined(VERSION_RSPE01_01)
+#elif defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
 s8 RPSportsPlayerData::getGolStandardBest(ECourse course) const {
     return mGolStandardBests[course];
 }

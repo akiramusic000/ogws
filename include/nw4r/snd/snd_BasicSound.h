@@ -4,7 +4,6 @@
 
 #include <nw4r/snd/snd_MoveValue.h>
 #include <nw4r/snd/snd_Types.h>
-
 #include <nw4r/ut.h>
 
 #include <revolution/WPAD.h>
@@ -157,6 +156,10 @@ public:
     void SetPriority(int priority) {
         mPriority = priority;
     }
+
+    bool GetStartedFlag() const {
+        return mStartedFlag;
+    };
 
     u32 GetId() const {
         return mId;

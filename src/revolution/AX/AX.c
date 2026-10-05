@@ -4,7 +4,7 @@
 #if defined(VERSION_RSPE01_00)
 const char* __AXVersion =
     "<< RVL_SDK - AX \trelease build: Oct  1 2006 03:26:07 (0x4200_60422) >>";
-#elif defined(VERSION_RSPE01_01)
+#elif defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
 const char* __AXVersion =
     "<< RVL_SDK - AX \trelease build: Dec 18 2006 15:43:48 (0x4199_60831) >>";
 #endif
@@ -27,7 +27,7 @@ void AXInitEx(u32 mode) {
     __AXClInit();
     __AXOutInit(mode);
 
-#elif defined(VERSION_RSPE01_01)
+#elif defined(VERSION_RSPE01_01) | defined(VERSION_RHAE01_01)
     if (!__init) {
         OSRegisterVersion(__AXVersion);
 

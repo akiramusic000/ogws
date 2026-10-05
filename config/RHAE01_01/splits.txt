@@ -1157,11 +1157,18 @@ egg/math/eggMath.cpp:
 	.rodata     start:0x8030EE30 end:0x8030EE68
 	.sdata2     start:0x8043DA78 end:0x8043DA80
 
-egg/math/eggQuat.cpp:
-	extab       start:0x80006540 end:0x800065C8
-	extabindex  start:0x80006D30 end:0x80006DCC
-	.text       start:0x800A1C04 end:0x800A2C28
+egg/math/eggMatrix.cpp:
+	extab       start:0x80006540 end:0x80006598
+	extabindex  start:0x80006D30 end:0x80006D84
+	.text       start:0x800A1C04 end:0x800A2734
 	.ctors      start:0x802E9D3C end:0x802E9D40
+	.bss        start:0x8039F4E0 end:0x8039F510
+	.sdata2     start:0x8043DA88 end:0x8043DA94
+
+egg/math/eggQuat.cpp:
+	extab       start:0x80006598 end:0x800065C8
+	extabindex  start:0x80006D84 end:0x80006DCC
+	.text       start:0x800A2734 end:0x800A2C28
 
 egg/math/eggVector.cpp:
 	extab       start:0x800065C8 end:0x800065D8
@@ -2700,12 +2707,17 @@ Pack/RPSystem/RPSysSceneCreator.cpp:
 Pack/RPSystem/RPSysScene.cpp:
 	.text       start:0x80184878 end:0x80184F44
 	.ctors      start:0x802E9D50 end:0x802E9D54
+	.data       start:0x8034F098 end:0x8034F0F4
+	.sbss       start:0x8043C460 end:0x8043C464
 
 Pack/RPSystem/RPSysRenderMode.cpp:
 	.text       start:0x80184F44 end:0x80185000
 
 Pack/RPSystem/RPSysSceneMgr.cpp:
 	.text       start:0x80185000 end:0x80185AD4
+	.data       start:0x8034F228 end:0x8034F270
+	.sbss       start:0x8043C468 end:0x8043C46C
+	.sdata2     start:0x8043E5E8 end:0x8043E5F8
 
 Pack/RPSystem/RPSysProjectLocal.cpp:
 	.text       start:0x80185AD4 end:0x80185CD0
@@ -2715,7 +2727,7 @@ Pack/RPSystem/RPSysProjectLocal.cpp:
 
 Pack/RPSystem/RPSysGameConfig.cpp:
 	.text       start:0x80185CD0 end:0x80185FE0
-	.rodata     start:0x80317028 end:0x8031711C
+	.rodata     start:0x80317028 end:0x80317120
 	.data       start:0x8034F2A0 end:0x8034F2C0
 	.sbss       start:0x8043C478 end:0x8043C47C
 
@@ -2725,6 +2737,7 @@ Pack/RPSystem/RPSysTagParms.cpp:
 
 Pack/RPSystem/RPSysLoadScene.cpp:
 	.text       start:0x80186118 end:0x801866E0
+	.rodata     start:0x80317120 end:0x80317174
 
 Pack/RPSystem/RP_801866E0.cpp:
 	.text       start:0x801866E0 end:0x80186754
@@ -2739,6 +2752,8 @@ Pack/RPSystem/RPSysResourceManager.cpp:
 
 Pack/RPSystem/RPSysQueuedScene.cpp:
 	.text       start:0x8018741C end:0x801874CC
+	.data       start:0x8034F308 end:0x8034F314
+	.sbss       start:0x8043C488 end:0x8043C48C
 
 Pack/RPSystem/RPSysCommonObject.cpp:
 	.text       start:0x801874CC end:0x80187820
@@ -2769,6 +2784,7 @@ Pack/RPSystem/RPSysSaveData.cpp:
 
 Pack/RPSystem/RPSysPauseMgr.cpp:
 	.text       start:0x8018AF1C end:0x8018B6EC
+	.sbss       start:0x8043C4A8 end:0x8043C4AC
 
 Pack/RPSystem/RPPartySystemData.cpp:
 	.text       start:0x8018B6EC end:0x8018BA94
@@ -2779,6 +2795,8 @@ Pack/RPSystem/RPPartyPlayerData.cpp:
 
 Pack/RPSystem/RPSysPlayerMgr.cpp:
 	.text       start:0x8018BE70 end:0x8018CC5C
+	.data       start:0x8034F420 end:0x8034F42C
+	.sbss       start:0x8043C4B0 end:0x8043C4B4
 
 Pack/RPSystem/RPSysPlayer.cpp:
 	.text       start:0x8018CC5C end:0x8018ED00
@@ -2788,52 +2806,72 @@ Pack/RPKernel/IRPSysHostIOSocket.cpp:
 
 Pack/RPKernel/RPSysHostIOSocketManager.cpp:
 	.text       start:0x8018EDFC end:0x8018EE80
+	.sbss       start:0x8043C4B8 end:0x8043C4C0
 
 Pack/RPKernel/RPSysTextWriter.cpp:
 	.text       start:0x8018EE88 end:0x8018F2E0
+	.sdata2     start:0x8043E680 end:0x8043E698
 
 Pack/RPKernel/RPSysMessage.cpp:
 	.text       start:0x8018F2E0 end:0x8018F3E4
 
 Pack/RPKernel/RPSysKokeshi.cpp:
 	.text       start:0x8018F3E4 end:0x8018FA2C
+	.sdata2     start:0x8043E698 end:0x8043E6A0
 
 Pack/RPKernel/RPSysKokeshiManager.cpp:
 	.text       start:0x8018FA34 end:0x80190C24
+	.rodata     start:0x803176E0 end:0x80317790
+	.sdata      start:0x8043B2D8 end:0x8043B300
+	.sdata2     start:0x8043E6A0 end:0x8043E6C0
 
 Pack/RPKernel/RP_DEBUG_STUB_1.cpp:
 	.text       start:0x80190C24 end:0x80190C74
 
 Pack/RPKernel/RPSysEffectMgr.cpp:
 	.text       start:0x80190C74 end:0x801926CC
+	.rodata     start:0x80317790 end:0x80317890
+	.sbss       start:0x8043C4D8 end:0x8043C4E0
+	.sdata2     start:0x8043E6C8 end:0x8043E6E0
 
 Pack/RPKernel/RPSysEffectBase.cpp:
 	.text       start:0x801926CC end:0x80193DB8
 	.ctors      start:0x802E9D58 end:0x802E9D5C
+	.sbss       start:0x8043C4E0 end:0x8043C4E8
+	.sdata2     start:0x8043E6E0 end:0x8043E6F0
 
 Pack/RPKernel/RPSysLayout.cpp:
 	.text       start:0x80193DCC end:0x80195CE0
+	.rodata     start:0x803178A0 end:0x803178A8
+	.sdata2     start:0x8043E6F0 end:0x8043E710
 
 Pack/RPKernel/RPSysFrameCtrl.cpp:
 	.text       start:0x80195CE0 end:0x80195F78
+	.sdata2     start:0x8043E710 end:0x8043E720
 
 Pack/RPKernel/RPSysEffectCreator.cpp:
 	.text       start:0x80195F78 end:0x80196A20
 
 Pack/RPKernel/RPSysWideTextWriter.cpp:
 	.text       start:0x80196CAC end:0x80196CD4
+	.sbss       start:0x8043C4E8 end:0x8043C4F0
 
 Pack/RPKernel/RPSysLytAnmObj.cpp:
 	.text       start:0x80196CD4 end:0x80196EB0
+	.sdata2     start:0x8043E740 end:0x8043E750
 
 Pack/RPKernel/RPSysLytResAccessor.cpp:
 	.text       start:0x80196EB0 end:0x8019702C
+	.rodata     start:0x803178A8 end:0x803178B0
 
 Pack/RPKernel/RPSysLytTextBox.cpp:
 	.text       start:0x8019702C end:0x801976A0
+	.bss        start:0x80438860 end:0x80438C60
+	.sdata2     start:0x8043E750 end:0x8043E770
 
 Pack/RPKernel/RPSysLytBounding.cpp:
 	.text       start:0x801976A0 end:0x801978B0
+	.sdata2     start:0x8043E770 end:0x8043E778
 
 Pack/RPKernel/RPSysFile.cpp:
 	.text       start:0x801978B0 end:0x80197998
@@ -2854,9 +2892,15 @@ Pack/RPKernel/RPSysTagProcessor.cpp:
 Pack/RPKernel/RPSysController.cpp:
 	.text       start:0x8019922C end:0x8019A6D0
 	.ctors      start:0x802E9D60 end:0x802E9D64
+	.rodata     start:0x803179C8 end:0x80317A08
+	.sdata      start:0x8043B308 end:0x8043B310
+	.sbss       start:0x8043C500 end:0x8043C518
+	.sdata2     start:0x8043E7C0 end:0x8043E7E8
 
 Pack/RPKernel/RPSysKokeshiIcon.cpp:
 	.text       start:0x8019A6D0 end:0x8019BDFC
+	.sdata      start:0x8043B310 end:0x8043B318
+	.sdata2     start:0x8043E7E8 end:0x8043E840
 
 Pack/RPKernel/RPSysKokeshiGenInfo.cpp:
 	.text       start:0x8019BDFC end:0x8019BF0C
@@ -2878,6 +2922,8 @@ Pack/RPKernel/RPSysLytAllocator.cpp:
 
 Pack/RPKernel/RPSysLytDynamicAnm.cpp:
 	.text       start:0x8019C420 end:0x8019C94C
+	.sbss       start:0x8043C518 end:0x8043C520
+	.sdata2     start:0x8043E840 end:0x8043E870
 
 Pack/RPKernel/RPSysKokeshiIterater.cpp:
 	.text       start:0x8019C94C end:0x8019CB7C
@@ -2885,6 +2931,10 @@ Pack/RPKernel/RPSysKokeshiIterater.cpp:
 Pack/RPKernel/RPSysCursorDrawMgr.cpp:
 	.text       start:0x8019CB7C end:0x8019E0A4
 	.ctors      start:0x802E9D64 end:0x802E9D68
+	.rodata     start:0x80317A20 end:0x80317B90
+	.bss        start:0x80438CA0 end:0x80438CB0
+	.sbss       start:0x8043C520 end:0x8043C530
+	.sdata2     start:0x8043E870 end:0x8043E888
 
 Pack/RPKernel/RPSysKokeshiCtrlDataLoader.cpp:
 	.text       start:0x8019E450 end:0x8019E5D0
@@ -2897,6 +2947,10 @@ Pack/RPKernel/RPSysSystemWinMgr.cpp:
 
 Pack/RPKernel/RPSysHomeMenuMgr.cpp:
 	.text       start:0x801A2320 end:0x801A3148
+	.rodata     start:0x80318070 end:0x803181A0
+	.sdata      start:0x8043B340 end:0x8043B348
+	.sbss       start:0x8043C538 end:0x8043C540
+	.sdata2     start:0x8043E8B0 end:0x8043E8E0
 
 Pack/RPKernel/RPSysOfficialDB.cpp:
 	.text       start:0x801A3148 end:0x801A33DC
@@ -2912,22 +2966,31 @@ Pack/RPKernel/RPSysKokeshiCtrlMgr.cpp:
 
 Pack/RPKernel/RPSysPairingMgr.cpp:
 	.text       start:0x801A3CA4 end:0x801A3DD4
+	.sbss       start:0x8043C540 end:0x8043C548
 
 Pack/RPKernel/RPSysControllerMgr.cpp:
 	.text       start:0x801A3DD4 end:0x801A4780
 
 Pack/RPKernel/RPSysNWC24Manager.cpp:
 	.text       start:0x801A4780 end:0x801A4F44
+	.sdata      start:0x8043B348 end:0x8043B350
 
 Pack/RPKernel/RPSysParticleManager.cpp:
 	.text       start:0x801A5420 end:0x801A567C
+	.sdata2     start:0x8043E8E8 end:0x8043E8F0
 
 nw4r/g3d/g3d_scnrfl.cpp:
 	.text       start:0x801A567C end:0x801A6228
+	.rodata     start:0x803181A8 end:0x803181B4
+	.data       start:0x8034FA58 end:0x8034FA8C
+	.sdata2     start:0x8043E8F0 end:0x8043E908
 
 Pack/RPGraphics/RPGrpCamera.cpp:
 	.text       start:0x801A6228 end:0x801A6DDC
 	.ctors      start:0x802E9D68 end:0x802E9D6C
+	.bss        start:0x80438CB0 end:0x80438F48
+	.sbss       start:0x8043C558 end:0x8043C560
+	.sdata2     start:0x8043E908 end:0x8043E940
 
 Pack/RPGraphics/RPGrpDrawPathManager.cpp:
 	.text       start:0x801A6DDC end:0x801A7758
@@ -2937,12 +3000,17 @@ Pack/RPGraphics/RPGrpLightManager.cpp:
 
 Pack/RPGraphics/RPGrpModel.cpp:
 	.text       start:0x801A77D8 end:0x801A7FA8
+	.sbss       start:0x8043C560 end:0x8043C578
+	.sdata2     start:0x8043E940 end:0x8043E948
 
 Pack/RPGraphics/RPGrpModelAnm.cpp:
 	.text       start:0x801A7FA8 end:0x801A881C
+	.sdata2     start:0x8043E948 end:0x8043E950
 
 Pack/RPGraphics/RPGrpModelAnmImplement.cpp:
 	.text       start:0x801A881C end:0x801AA9C0
+	.rodata     start:0x803181E8 end:0x80318218
+	.sdata2     start:0x8043E950 end:0x8043E960
 
 Pack/RPGraphics/RPGrpModelImplement.cpp:
 	.text       start:0x801AA9C0 end:0x801ABBF8
@@ -2960,10 +3028,14 @@ Pack/RPGraphics/RPGrpRenderer.cpp:
 Pack/RPGraphics/RPGrpScreen.cpp:
 	.text       start:0x801ADC30 end:0x801ADDA8
 	.ctors      start:0x802E9D70 end:0x802E9D74
+	.bss        start:0x80438FB8 end:0x80439030
+	.sdata2     start:0x8043E980 end:0x8043E988
 
 Pack/RPGraphics/RPGrpView.cpp:
 	.text       start:0x801ADDA8 end:0x801AEDDC
 	.ctors      start:0x802E9D74 end:0x802E9D78
+	.bss        start:0x80439030 end:0x80439088
+	.sdata2     start:0x8043E988 end:0x8043E9B8
 
 Pack/RPGraphics/RPGrpViewRender2D.cpp:
 	.text       start:0x801AEDDC end:0x801AEEB8
@@ -2994,31 +3066,46 @@ Pack/RPGraphics/RPGrpTexture.cpp:
 
 Pack/RPGraphics/RPGrpCaptureTexture.cpp:
 	.text       start:0x801B15B8 end:0x801B1820
+	.sdata2     start:0x8043E9C8 end:0x8043E9D0
 
 Pack/RPGraphics/RPGrpProjectionObject.cpp:
 	.text       start:0x801B1820 end:0x801B19E8
+	.sdata2     start:0x8043E9D0 end:0x8043E9D8
 
 Pack/RPGraphics/RPGrpModelRfl.cpp:
 	.text       start:0x801B19E8 end:0x801B2B34
 	.ctors      start:0x802E9D78 end:0x802E9D7C
+	.rodata     start:0x803182B0 end:0x803182C0
+	.bss        start:0x80439088 end:0x804390E0
+	.sdata      start:0x8043B358 end:0x8043B360
+	.sdata2     start:0x8043E9D8 end:0x8043EA18
 
 Pack/RPAudio/RPSndAudioMgr.cpp:
 	.text       start:0x801B2B34 end:0x801B4BE0
+	.rodata     start:0x803182C0 end:0x80318320
+	.sbss       start:0x8043C5D0 end:0x8043C5E0
+	.sdata2     start:0x8043EA18 end:0x8043EA40
 
 Pack/RPAudio/RPSndSpeakerMgr.cpp:
 	.text       start:0x801B4BE0 end:0x801B5754
+	.sbss       start:0x8043C5E0 end:0x8043C5E8
+	.sdata2     start:0x8043EA40 end:0x8043EA48
 
 Pack/RPAudio/RPSndUtility.cpp:
 	.text       start:0x801B5754 end:0x801B584C
+	.sdata2     start:0x8043EA48 end:0x8043EA58
 
 Pack/RPAudio/RPSndMoveParam.cpp:
 	.text       start:0x801B597C end:0x801B5CAC
+	.bss        start:0x80439100 end:0x80439110
+	.sdata2     start:0x8043EA58 end:0x8043EA68
 
 Pack/RPAudio/RPSndHomeMenuArcMgr.cpp:
 	.text       start:0x801B5CAC end:0x801B5E54
 
 Pack/RPAudio/RPSndStaticMgr.cpp:
 	.text       start:0x801B5E54 end:0x801B621C
+	.sdata2     start:0x8043EA68 end:0x8043EA78
 
 Pack/RPUtility/RP_DEBUG_STUB_2.cpp:
 	.text       start:0x801B6B78 end:0x801B6C0C

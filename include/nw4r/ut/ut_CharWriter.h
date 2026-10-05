@@ -2,9 +2,8 @@
 #define NW4R_UT_CHAR_WRITER_H
 #include <nw4r/types_nw4r.h>
 
-#include <nw4r/ut/ut_Color.h>
-
 #include <nw4r/math.h>
+#include <nw4r/ut/ut_Color.h>
 
 #include <revolution/GX.h>
 
@@ -131,6 +130,7 @@ public:
     }
 
     void SetFontSize(f32 width, f32 height);
+    void SetFontSize(f32 size);
 
     f32 GetFontWidth() const;
     f32 GetFontHeight() const;
