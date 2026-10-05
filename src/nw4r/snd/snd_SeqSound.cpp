@@ -132,6 +132,11 @@ bool SeqSound::ReadGlobalVariable(int idx, s16* value) {
     return true;
 }
 
+bool SeqSound::WriteVariable(int idx, s16 value) {
+    mSeqPlayer.SetLocalVariable(idx, value);
+    return true;
+}
+
 bool SeqSound::WriteGlobalVariable(int idx, s16 value) {
     SeqPlayer::SetGlobalVariable(idx, value);
     return true;
