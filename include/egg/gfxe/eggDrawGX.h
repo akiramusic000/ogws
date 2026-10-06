@@ -37,6 +37,13 @@ public:
         CIRCLE_MAX,
     };
 
+    enum LineCircle {
+        LINE_CIRCLE_16, // Low detail (16 segments)
+        LINE_CIRCLE_32, // High detail (32 segments)
+
+        LINE_CIRCLE_MAX,
+    };
+
     enum ColorChannel {
         COLORCHAN_LIGHT,
         COLORCHAN_COLOR,
@@ -121,8 +128,14 @@ public:
                          GXColor color, u8 width);
     static void DrawLineStrip(const nw4r::math::VEC3* pPoints, u16 num,
                               GXColor color, u8 width);
+    static void DrawPoints(const nw4r::math::VEC3* pPoints, u16 num,
+                           GXColor color, u8 size);
     static void DrawCircle2D(Circle circle, f32 x, f32 y, f32 radius,
                              GXColor color);
+    static void DrawLineCircle2D(LineCircle circle, GXColor color, f32 x, f32 y,
+                                 f32 radius, u8 width);
+    static void DrawCylinderY(Circle circle, const nw4r::math::MTX34& rMtx,
+                              GXColor color);
     static void DrawCornY(Circle circle, const nw4r::math::MTX34& rMtx,
                           GXColor color);
     static void DrawPolygon(const nw4r::math::VEC3& rP0,
@@ -222,6 +235,7 @@ private:
 
 private:
     static DLEntry s_DL[DL_MAX];
+    static const DL s_lineCircleDLTbl[LINE_CIRCLE_MAX];
     static const DL s_circleDLTbl[CIRCLE_MAX];
 
     static nw4r::math::MTX34 s_cameraMtx;

@@ -736,7 +736,7 @@ config.libs = [
             Object(Matching, "egg/gfxe/eggAnalizeDL.cpp"),
             Object(Matching, "egg/gfxe/eggCapTexture.cpp"),
             Object(NonMatching, "egg/gfxe/eggCpuTexture.cpp"),
-            Object(not MatchingFor("RHAE01_01"), "egg/gfxe/eggDrawGX.cpp"),
+            Object(Matching, "egg/gfxe/eggDrawGX.cpp"),
             Object(NonMatching, "egg/gfxe/eggDrawPathBase.cpp"),
             Object(NonMatching, "egg/gfxe/eggDrawPathBloom.cpp"),
             Object(NonMatching, "egg/gfxe/eggDrawPathDOF.cpp"),

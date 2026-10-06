@@ -16,6 +16,8 @@ const GXColor DrawGX::BLUE = {0, 0, 255, 255};
 const GXColor DrawGX::ORANGE = {255, 162, 0, 255};
 
 DrawGX::DLEntry DrawGX::s_DL[DL_MAX];
+const DrawGX::DL DrawGX::s_lineCircleDLTbl[CIRCLE_MAX] = {DL_LINE_CIRCLE_16,
+                                                          DL_LINE_CIRCLE_32};
 const DrawGX::DL DrawGX::s_circleDLTbl[CIRCLE_MAX] = {DL_CIRCLE_16,
                                                       DL_CIRCLE_32};
 
@@ -364,6 +366,22 @@ void DrawGX::DrawLineStrip(const nw4r::math::VEC3* pPoints, u16 num,
     GXEnd();
 }
 
+void DrawGX::DrawPoints(const nw4r::math::VEC3* pPoints, u16 num, GXColor color,
+                        u8 size) {
+
+    GXLoadPosMtxImm(s_cameraMtx, GX_PNMTX0);
+    GXSetChanMatColor(GX_COLOR0A0, color);
+    GXSetPointSize(size, 0);
+
+    GXBegin(GX_POINTS, GX_VTXFMT0, num);
+    {
+        for (int i = 0; i < num; i++) {
+            GXPosition3f32(pPoints[i].x, pPoints[i].y, pPoints[i].z);
+        }
+    }
+    GXEnd();
+}
+
 void DrawGX::DrawCircle2D(Circle circle, f32 x, f32 y, f32 radius,
                           GXColor color) {
 
@@ -373,6 +391,36 @@ void DrawGX::DrawCircle2D(Circle circle, f32 x, f32 y, f32 radius,
 
     GXSetCullMode(GX_CULL_NONE);
     DrawDL(s_circleDLTbl[circle], mtx, color);
+}
+
+void DrawGX::DrawLineCircle2D(LineCircle circle, GXColor color, f32 x, f32 y,
+                              f32 radius, u8 width) {
+    nw4r::math::MTX34 mtx;
+    PSMTXScale(mtx, radius * 2, radius * 2, 1.0f);
+    PSMTXTransApply(mtx, mtx, x, y, 0.0f);
+
+    GXSetLineWidth(width, 0);
+    DrawDL(s_lineCircleDLTbl[circle], mtx, color);
+}
+
+void DrawGX::DrawCylinderY(Circle circle, const nw4r::math::MTX34& rMtx,
+                           GXColor color) {
+
+    switch (circle) {
+    case CIRCLE_16: {
+        DrawDLWorld(DL_CYLINDER_16, rMtx, color);
+        break;
+    }
+
+    case CIRCLE_32: {
+        DrawDLWorld(DL_CYLINDER_32, rMtx, color);
+        break;
+    }
+
+    default: {
+        break;
+    }
+    }
 }
 
 void DrawGX::DrawCornY(Circle circle, const nw4r::math::MTX34& rMtx,
