@@ -22,6 +22,18 @@ template <typename T> T Math<T>::cos(T t) {
     return std::cos(t);
 }
 
+template <typename T> T Math<T>::acos(T t) {
+#line 48
+    EGG_ASSERT(-1 <= t && t <= 1);
+    return std::acos(t);
+}
+
+template <typename T> T Math<T>::asin(T t) {
+#line 41
+    EGG_ASSERT(-1 <= t && t <= 1);
+    return std::asin(t);
+}
+
 template <typename T> T Math<T>::atan2(T ty, T tx) {
     return std::atan2(ty, tx);
 }

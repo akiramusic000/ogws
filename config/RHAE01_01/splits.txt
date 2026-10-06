@@ -1155,7 +1155,7 @@ egg/math/eggMath.cpp:
 	extabindex  start:0x80006CE8 end:0x80006D30
 	.text       start:0x800A1A4C end:0x800A1C04
 	.rodata     start:0x8030EE30 end:0x8030EE68
-	.sdata2     start:0x8043DA78 end:0x8043DA80
+	.sdata2     start:0x8043DA78 end:0x8043DA84
 
 egg/math/eggMatrix.cpp:
 	extab       start:0x80006540 end:0x80006598

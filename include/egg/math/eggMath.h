@@ -11,6 +11,8 @@ public:
     static T sqrt(T t);
     static T sin(T t);
     static T cos(T t);
+    static T asin(T t);
+    static T acos(T t);
     static T atan2(T ty, T tx);
 
     static T zero() {
