@@ -947,7 +947,7 @@ config.libs = [
             Object(NonMatching, "revolution/NdevExi2AD/DebuggerDriver.c"),
             Object(Matching, "revolution/NdevExi2AD/exi2.c"),
             Object(NonMatching, "revolution/KPAD/KPAD.c"),
-            Object(not MatchingFor("RHAE01_01"), "revolution/PAD/Pad.c"),
+            Object(Matching, "revolution/PAD/Pad.c"),
             Object(NonMatching, "revolution/WPAD/WPAD.c"),
             Object(NonMatching, "revolution/WPAD/WPADHIDParser.c"),
             Object(NonMatching, "revolution/WPAD/WPADEncrypt.c"),
