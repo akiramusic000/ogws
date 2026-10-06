@@ -15,6 +15,31 @@
 namespace nw4r {
 namespace math {
 
+VEC2* VEC2Normalize(register VEC2* pOut, register const VEC2* p) {
+    register f32 c_half = 0.5f;
+    register f32 c_three = 3.0f;
+    register f32 v1_xy;
+    register f32 xx_yy;
+    register f32 sqsum;
+    register f32 rsqrt;
+    register f32 nwork0, nwork1;
+
+    ASM
+    (
+        psq_l v1_xy, VEC2.x( p ), 0, 0;
+        ps_mul xx_yy, v1_xy, v1_xy;
+        ps_sum0 sqsum, xx_yy, xx_yy, xx_yy;
+        frsqrte rsqrt, sqsum;
+        fmuls nwork0, rsqrt, rsqrt;
+        fmuls nwork1, rsqrt, c_half;
+        fnmsubs nwork0, nwork0, sqsum, c_three;
+        fmuls rsqrt, nwork0, nwork1;
+        ps_muls0 v1_xy, v1_xy, rsqrt;
+        psq_st v1_xy, VEC2.x( pOut ), 0, 0;
+    );
+    return pOut;
+}
+
 VEC3* VEC3Maximize(VEC3* pOut, const VEC3* pA, const VEC3* pB) {
     register f32 fx, fy;
     register f32 dt, work;

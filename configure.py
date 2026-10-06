@@ -539,7 +539,7 @@ config.libs = [
         "objects": [
             Object(Matching, "nw4r/math/math_arithmetic.cpp"),
             Object(Matching, "nw4r/math/math_triangular.cpp"),
-            Object(not MatchingFor("RHAE01_01"), "nw4r/math/math_types.cpp"),
+            Object(Matching, "nw4r/math/math_types.cpp"),
             Object(Matching, "nw4r/math/math_geometry.cpp"),
         ]
     },
