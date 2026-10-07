@@ -1993,44 +1993,44 @@ BOOL DVDCheckDiskAsync(DVDCommandBlock* block, DVDCommandCallback callback) {
     enabled = OSDisableInterrupts();
 
     if (FatalErrorFlag) {
-        state = -1;
+        state = DVD_STATE_FATAL;
     } else if (PausingFlag) {
-        state = 8;
+        state = DVD_STATE_PAUSED;
     } else {
         if (WaitingForCoverOpen) {
-            state = 7;
+            state = DVD_STATE_7;
         }
         if (WaitingForCoverClose) {
-            state = 5;
+            state = DVD_STATE_COVER_OPENED;
         } else if (executing == NULL) {
             switch (ResumeFromHere) {
-            case 3: {
-                state = 4;
+            case RESUME_POINT_NO_DISK: {
+                state = DVD_STATE_NO_DISK;
                 break;
             }
-            case 4: {
-                state = 5;
+            case RESUME_POINT_COVER_OPENED: {
+                state = DVD_STATE_COVER_OPENED;
                 break;
             }
-            case 1: {
-                state = 6;
+            case RESUME_POINT_WRONG_DISK_ID: {
+                state = DVD_STATE_WRONG_DISK_ID;
                 break;
             }
-            case 2: {
-                state = 11;
+            case RESUME_POINT_DISK_ERROR: {
+                state = DVD_STATE_DISK_ERROR;
                 break;
             }
-            case 7: {
-                state = 7;
+            case RESUME_POINT_7: {
+                state = DVD_STATE_7;
                 break;
             }
             default: {
-                state = 0;
+                state = DVD_STATE_IDLE;
                 break;
             }
             }
         } else if (executing == &DummyCommandBlock) {
-            state = 0;
+            state = DVD_STATE_IDLE;
         } else {
             state = executing->state;
         }
@@ -2038,40 +2038,40 @@ BOOL DVDCheckDiskAsync(DVDCommandBlock* block, DVDCommandCallback callback) {
 
     retVal = TRUE;
     switch (state) {
-    case 1:
-    case 9:
-    case 10:
-    case 2:
-        block->state = 0;
+    case DVD_STATE_BUSY:
+    case DVD_STATE_9:
+    case DVD_STATE_CANCELED:
+    case DVD_STATE_WAITING:
+        block->state = DVD_STATE_IDLE;
         if (callback) {
             (*callback)(TRUE, block);
         }
         OSRestoreInterrupts(enabled);
         break;
 
-    case -1:
-    case 11:
-    case 7:
-    case 3:
-    case 4:
-    case 5:
-    case 6:
-    case 12:
-        block->state = 0;
+    case DVD_STATE_FATAL:
+    case DVD_STATE_DISK_ERROR:
+    case DVD_STATE_7:
+    case DVD_STATE_COVER_CLOSED:
+    case DVD_STATE_NO_DISK:
+    case DVD_STATE_COVER_OPENED:
+    case DVD_STATE_WRONG_DISK_ID:
+    case DVD_STATE_MOTOR_STOPPED:
+        block->state = DVD_STATE_IDLE;
         if (callback) {
             (*callback)(FALSE, block);
         }
         OSRestoreInterrupts(enabled);
         break;
 
-    case 0:
-    case 8:
+    case DVD_STATE_IDLE:
+    case DVD_STATE_PAUSED:
         OSRestoreInterrupts(enabled);
 
-        block->command = 36;
+        block->command = COMMAND_GET_COVER_READY;
         block->callback = callback;
 
-        retVal = issueCommand(2, block);
+        retVal = issueCommand(DVD_PRIO_MEDIUM, block);
         break;
     }
 
