@@ -2703,6 +2703,8 @@ main.cpp:
 
 Pack/RPSystem/RPSysSceneCreator.cpp:
 	.text       start:0x80183BA0 end:0x80184878
+	.rodata     start:0x80316CE8 end:0x80316FF0
+	.data       start:0x8034F050 end:0x8034F094
 
 Pack/RPSystem/RPSysScene.cpp:
 	.text       start:0x80184878 end:0x80184F44

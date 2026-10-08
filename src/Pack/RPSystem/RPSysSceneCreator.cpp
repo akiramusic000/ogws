@@ -244,6 +244,11 @@ void RPSysSceneCreator::destroy(s32 /* id */) {
     if (RP_GET_INSTANCE(RPSysSceneMgr)->isApplicationEndReserved()) {
         RP_GET_INSTANCE(RPSysSystem)->systemShutDown();
     }
+#if defined(VERSION_RHAE01_01)
+    else if (RP_GET_INSTANCE(RPSysSceneMgr)->isNormalState()) {
+        RP_GET_INSTANCE(RPSysSystem)->systemShutDown();
+    }
+#endif
 }
 
 /**

@@ -11,6 +11,9 @@
  * @brief Base class for Party Pack scenes using sequence logic
  */
 class RPPartySeqScene : public RPSysScene {
+public:
+    RPPartySeqScene();
+
 private:
 };
 
