@@ -3126,28 +3126,34 @@ Pack/RPGraphics/RPGrpModelRfl.cpp:
 Pack/RPAudio/RPSndAudioMgr.cpp:
 	.text       start:0x801B2B34 end:0x801B4BE0
 	.rodata     start:0x803182C0 end:0x80318320
+	.data       start:0x803502E0 end:0x80350480
 	.sbss       start:0x8043C5D0 end:0x8043C5E0
 	.sdata2     start:0x8043EA18 end:0x8043EA40
 
 Pack/RPAudio/RPSndSpeakerMgr.cpp:
 	.text       start:0x801B4BE0 end:0x801B5754
+	.data       start:0x803504C0 end:0x803504CC
 	.sbss       start:0x8043C5E0 end:0x8043C5E8
 	.sdata2     start:0x8043EA40 end:0x8043EA48
 
 Pack/RPAudio/RPSndUtility.cpp:
 	.text       start:0x801B5754 end:0x801B584C
+	.sbss       start:0x8043C5E8 end:0x8043C5EC
 	.sdata2     start:0x8043EA48 end:0x8043EA58
 
 Pack/RPAudio/RPSndMoveParam.cpp:
 	.text       start:0x801B597C end:0x801B5CAC
+	.data       start:0x803504D0 end:0x803504F8
 	.bss        start:0x80439100 end:0x80439110
 	.sdata2     start:0x8043EA58 end:0x8043EA68
 
 Pack/RPAudio/RPSndHomeMenuArcMgr.cpp:
 	.text       start:0x801B5CAC end:0x801B5E54
+	.data       start:0x803504F8 end:0x80350570
 
 Pack/RPAudio/RPSndStaticMgr.cpp:
 	.text       start:0x801B5E54 end:0x801B621C
+	.data       start:0x80350580 end:0x80357180
 	.sdata2     start:0x8043EA68 end:0x8043EA78
 
 Pack/RPUtility/RP_DEBUG_STUB_2.cpp:
