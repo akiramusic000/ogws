@@ -45,8 +45,11 @@ RPSysEffect::RPSysEffect(RPSysEffect& other) {
     std::strcpy(mName, other.mName);
 #endif
 
-    mDrawGroup = other.mDrawGroup;
-    mDrawScene = other.mDrawScene;
+    u32 draw_scene = other.mDrawScene;
+    u32 draw_group = other.mDrawGroup;
+
+    mDrawScene = draw_scene;
+    mDrawGroup = draw_group;
 
     reset();
 }
