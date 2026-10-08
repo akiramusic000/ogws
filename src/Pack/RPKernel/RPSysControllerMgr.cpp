@@ -124,8 +124,8 @@ void RPSysCoreControllerMgr::create() {
 
     // Override the EGG manager
     RPSysCoreControllerMgr* p = new RPSysCoreControllerMgr();
-    EGG::CoreControllerMgr::sInstance = p;
     spInstance = p;
+    EGG::CoreControllerMgr::sInstance = p;
 
     WPADSetClearDeviceCallback(clearDeviceCallback);
     setConnectCallback(connectCallback);

@@ -33,6 +33,25 @@ RPSysEffect::RPSysEffect(const char* pName, u32 drawGroup, u32 drawScene) {
 }
 
 /**
+ * @brief Constructor
+ *
+ * @param other Effect to create this effect from
+ */
+RPSysEffect::RPSysEffect(RPSysEffect& other) {
+    // @bug Unsafe string operations
+#if defined(BUG_FIX)
+    std::strncpy(mName, other.mName, ARRAY_SIZE(mName));
+#else
+    std::strcpy(mName, other.mName);
+#endif
+
+    mDrawGroup = other.mDrawGroup;
+    mDrawScene = other.mDrawScene;
+
+    reset();
+}
+
+/**
  * @brief Destructor
  */
 RPSysEffect::~RPSysEffect() {}

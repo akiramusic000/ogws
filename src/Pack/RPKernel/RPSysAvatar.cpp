@@ -62,6 +62,9 @@ void RPSysAvatar::Setup() {
     // Middle database Miis have their physical appearance randomized
     if (location.GetDataSource() == RFLDataSource_Middle &&
         location.GetMiddleDB()->GetStoredNum() <= location.GetIndex()) {
+#if defined(PACK_PARTY)
+        std::wcscpy(mAdditionalInfo.name, L"");
+#endif
 
         mAdditionalInfo.height = RPUtlRandom::getU32(RFL_MAX_BODY_HEIGHT);
         mAdditionalInfo.build = RPUtlRandom::getU32(RFL_MAX_BODY_BUILD);

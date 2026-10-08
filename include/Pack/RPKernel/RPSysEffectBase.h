@@ -25,6 +25,13 @@ public:
     RPSysEffect(const char* pName, u32 drawGroup, u32 drawScene);
 
     /**
+     * @brief Constructor
+     *
+     * @param other Effect to create this effect from
+     */
+    RPSysEffect(RPSysEffect& other);
+
+    /**
      * @brief Destructor
      */
     virtual ~RPSysEffect(); // at 0x8

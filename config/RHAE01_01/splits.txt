@@ -2805,46 +2805,56 @@ Pack/RPSystem/RPSysPlayer.cpp:
 
 Pack/RPKernel/IRPSysHostIOSocket.cpp:
 	.text       start:0x8018ED50 end:0x8018EDFC
+	.data       start:0x8034F430 end:0x8034F444
 
 Pack/RPKernel/RPSysHostIOSocketManager.cpp:
 	.text       start:0x8018EDFC end:0x8018EE80
+	.data       start:0x8034F448 end:0x8034F454
 	.sbss       start:0x8043C4B8 end:0x8043C4C0
 
 Pack/RPKernel/RPSysTextWriter.cpp:
 	.text       start:0x8018EE88 end:0x8018F2E0
+	.data       start:0x8034F458 end:0x8034F464
+	.sbss       start:0x8043C4C8 end:0x8043C4CC
 	.sdata2     start:0x8043E680 end:0x8043E698
 
 Pack/RPKernel/RPSysMessage.cpp:
 	.text       start:0x8018F2E0 end:0x8018F3E4
+	.data       start:0x8034F468 end:0x8034F474
 
 Pack/RPKernel/RPSysKokeshi.cpp:
 	.text       start:0x8018F3E4 end:0x8018FA2C
+	.data       start:0x8034F478 end:0x8034F48C
 	.sdata2     start:0x8043E698 end:0x8043E6A0
 
 Pack/RPKernel/RPSysKokeshiManager.cpp:
 	.text       start:0x8018FA34 end:0x80190C24
 	.rodata     start:0x803176E0 end:0x80317790
+	.data       start:0x8034F490 end:0x8034F4A4
 	.sdata      start:0x8043B2D8 end:0x8043B300
 	.sdata2     start:0x8043E6A0 end:0x8043E6C0
 
 Pack/RPKernel/RP_DEBUG_STUB_1.cpp:
 	.text       start:0x80190C24 end:0x80190C74
+	.data       start:0x8034F4A8 end:0x8034F4B4
 
 Pack/RPKernel/RPSysEffectMgr.cpp:
 	.text       start:0x80190C74 end:0x801926CC
 	.rodata     start:0x80317790 end:0x80317890
+	.data       start:0x8034F4B8 end:0x8034F5D0
 	.sbss       start:0x8043C4D8 end:0x8043C4E0
 	.sdata2     start:0x8043E6C8 end:0x8043E6E0
 
 Pack/RPKernel/RPSysEffectBase.cpp:
 	.text       start:0x801926CC end:0x80193DB8
 	.ctors      start:0x802E9D58 end:0x802E9D5C
+	.data       start:0x8034F5D0 end:0x8034F668
 	.sbss       start:0x8043C4E0 end:0x8043C4E8
 	.sdata2     start:0x8043E6E0 end:0x8043E6F0
 
 Pack/RPKernel/RPSysLayout.cpp:
 	.text       start:0x80193DCC end:0x80195CE0
-	.rodata     start:0x803178A0 end:0x803178A8
+	.rodata     start:0x80317890 end:0x803178A8
 	.sdata2     start:0x8043E6F0 end:0x8043E710
 
 Pack/RPKernel/RPSysFrameCtrl.cpp:
@@ -2853,6 +2863,8 @@ Pack/RPKernel/RPSysFrameCtrl.cpp:
 
 Pack/RPKernel/RPSysEffectCreator.cpp:
 	.text       start:0x80195F78 end:0x80196A20
+	.data       start:0x8034F668 end:0x8034F674
+	.sdata2     start:0x8043E720 end:0x8043E740
 
 Pack/RPKernel/RPSysWideTextWriter.cpp:
 	.text       start:0x80196CAC end:0x80196CD4
@@ -2865,6 +2877,7 @@ Pack/RPKernel/RPSysLytAnmObj.cpp:
 Pack/RPKernel/RPSysLytResAccessor.cpp:
 	.text       start:0x80196EB0 end:0x8019702C
 	.rodata     start:0x803178A8 end:0x803178B0
+	.data       start:0x8034F688 end:0x8034F69C
 
 Pack/RPKernel/RPSysLytTextBox.cpp:
 	.text       start:0x8019702C end:0x801976A0
@@ -2877,9 +2890,16 @@ Pack/RPKernel/RPSysLytBounding.cpp:
 
 Pack/RPKernel/RPSysFile.cpp:
 	.text       start:0x801978B0 end:0x80197998
+	.data       start:0x8034F6A0 end:0x8034F6AC
+
+Pack/RPKernel/RPSys_80197998.cpp:
+	.text       start:0x80197998 end:0x80197A2C
 
 Pack/RPKernel/RPSysAvatar.cpp:
-	.text       start:0x80197BC0 end:0x80197D98
+	.text       start:0x80197A2C end:0x80197D98
+	.data       start:0x8034F6C8 end:0x8034F6E0
+	.sdata      start:0x8043B300 end:0x8043B302
+	.sdata2     start:0x8043E778 end:0x8043E788
 
 Pack/RPKernel/RPSysTutorialWinMgr.cpp:
 	.text       start:0x80197D98 end:0x80198758
@@ -2895,6 +2915,7 @@ Pack/RPKernel/RPSysController.cpp:
 	.text       start:0x8019922C end:0x8019A6D0
 	.ctors      start:0x802E9D60 end:0x802E9D64
 	.rodata     start:0x803179C8 end:0x80317A08
+	.data       start:0x8034F708 end:0x8034F740
 	.sdata      start:0x8043B308 end:0x8043B310
 	.sbss       start:0x8043C500 end:0x8043C518
 	.sdata2     start:0x8043E7C0 end:0x8043E7E8
@@ -2906,21 +2927,27 @@ Pack/RPKernel/RPSysKokeshiIcon.cpp:
 
 Pack/RPKernel/RPSysKokeshiGenInfo.cpp:
 	.text       start:0x8019BDFC end:0x8019BF0C
+	.data       start:0x8034F758 end:0x8034F764
 
 Pack/RPKernel/RPSysKokeshiLocation.cpp:
 	.text       start:0x8019BF0C end:0x8019BF6C
+	.data       start:0x8034F768 end:0x8034F774
 
 Pack/RPKernel/RPSysKokeshiOverloadInfo.cpp:
 	.text       start:0x8019BF6C end:0x8019BFC8
+	.data       start:0x8034F778 end:0x8034F784
 
 Pack/RPKernel/RPSysMiddleDBGenInfo.cpp:
 	.text       start:0x8019BFC8 end:0x8019C03C
+	.data       start:0x8034F788 end:0x8034F794
 
 Pack/RPKernel/RPSysMiddleDB.cpp:
 	.text       start:0x8019C044 end:0x8019C368
+	.data       start:0x8034F798 end:0x8034F7D0
 
 Pack/RPKernel/RPSysLytAllocator.cpp:
 	.text       start:0x8019C368 end:0x8019C420
+	.data       start:0x8034F7D0 end:0x8034F7E4
 
 Pack/RPKernel/RPSysLytDynamicAnm.cpp:
 	.text       start:0x8019C420 end:0x8019C94C
@@ -2929,20 +2956,28 @@ Pack/RPKernel/RPSysLytDynamicAnm.cpp:
 
 Pack/RPKernel/RPSysKokeshiIterater.cpp:
 	.text       start:0x8019C94C end:0x8019CB7C
+	.data       start:0x8034F7E8 end:0x8034F810
 
 Pack/RPKernel/RPSysCursorDrawMgr.cpp:
 	.text       start:0x8019CB7C end:0x8019E0A4
 	.ctors      start:0x802E9D64 end:0x802E9D68
 	.rodata     start:0x80317A20 end:0x80317B90
+	.data       start:0x8034F810 end:0x8034F824
 	.bss        start:0x80438CA0 end:0x80438CB0
 	.sbss       start:0x8043C520 end:0x8043C530
 	.sdata2     start:0x8043E870 end:0x8043E888
 
+Pack/RPKernel/RPSysStringUtility.cpp:
+	.text       start:0x8019E0A4 end:0x8019E450
+	.data       start:0x8034F828 end:0x8034F840
+
 Pack/RPKernel/RPSysKokeshiCtrlDataLoader.cpp:
 	.text       start:0x8019E450 end:0x8019E5D0
+	.data       start:0x8034F840 end:0x8034F87C
 
 Pack/RPKernel/RPSysPauseMenu.cpp:
 	.text       start:0x8019E5D0 end:0x8019F9D0
+	.data       start:0x8034F908 end:0x8034F918
 
 Pack/RPKernel/RPSysSystemWinMgr.cpp:
 	.text       start:0x8019F9D0 end:0x801A2320
@@ -2956,15 +2991,18 @@ Pack/RPKernel/RPSysHomeMenuMgr.cpp:
 
 Pack/RPKernel/RPSysOfficialDB.cpp:
 	.text       start:0x801A3148 end:0x801A33DC
+	.data       start:0x8034F918 end:0x8034F924
 
 Pack/RPKernel/RPSysLytWindow.cpp:
 	.text       start:0x801A33DC end:0x801A348C
 
 Pack/RPKernel/RPSysKokeshiCtrlDataMgr.cpp:
 	.text       start:0x801A348C end:0x801A39F0
+	.data       start:0x8034F928 end:0x8034F934
 
 Pack/RPKernel/RPSysKokeshiCtrlMgr.cpp:
 	.text       start:0x801A39F0 end:0x801A3CA4
+	.data       start:0x8034F938 end:0x8034F950
 
 Pack/RPKernel/RPSysPairingMgr.cpp:
 	.text       start:0x801A3CA4 end:0x801A3DD4
@@ -2972,13 +3010,16 @@ Pack/RPKernel/RPSysPairingMgr.cpp:
 
 Pack/RPKernel/RPSysControllerMgr.cpp:
 	.text       start:0x801A3DD4 end:0x801A4780
+	.sbss       start:0x8043C548 end:0x8043C558
 
 Pack/RPKernel/RPSysNWC24Manager.cpp:
 	.text       start:0x801A4780 end:0x801A4F44
-	.sdata      start:0x8043B348 end:0x8043B350
+	.data       start:0x8034F960 end:0x8034FA08
+	.sdata      start:0x8043B348 end:0x8043B34C
 
 Pack/RPKernel/RPSysParticleManager.cpp:
 	.text       start:0x801A5420 end:0x801A567C
+	.data       start:0x8034FA20 end:0x8034FA54
 	.sdata2     start:0x8043E8E8 end:0x8043E8F0
 
 nw4r/g3d/g3d_scnrfl.cpp:
