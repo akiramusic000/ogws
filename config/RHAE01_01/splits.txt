@@ -3153,14 +3153,16 @@ Pack/RPAudio/RPSndStaticMgr.cpp:
 Pack/RPUtility/RP_DEBUG_STUB_2.cpp:
 	.text       start:0x801B6B78 end:0x801B6C0C
 
-Pack/RPUtility/RPUtlRandom.cpp:
-	.text       start:0x801B70A0 end:0x801B70F4
-
 Pack/RPUtility/RPUtlDebugStub3.cpp:
 	.text       start:0x801B76CC end:0x801B770C
 
 Pack/RPUtility/RPUtlCollisionModel.cpp:
 	.text       start:0x801B7748 end:0x801B8048
+
+Pack/RPUtility/RPUtlRandom.cpp:
+	.text       start:0x801B882C end:0x801B8880
+	.sbss       start:0x8043C620 end:0x8043C624
+	.sdata2     start:0x8043EAB0 end:0x8043EABC
 
 Pack/RPUtility/RPUtlMapData.cpp:
 	.text       start:0x801B8888 end:0x801B8CE8

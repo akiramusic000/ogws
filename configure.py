@@ -1325,7 +1325,7 @@ config.libs = [
         "cflags": cflags_rp_pch,
         "progress_category": "utility",  # str | List[str]
         "objects": [
-            Object(not MatchingFor("RHAE01_01"), "Pack/RPUtility/RPUtlDohMath.cpp"),
+            Object(Matching, "Pack/RPUtility/RPUtlDohMath.cpp"),
             Object(NonMatching, "Pack/RPUtility/RPUtlRigid.cpp"),
             Object(NonMatching, "Pack/RPUtility/RPUtlAccAnalyzer.cpp"),
             Object(NonMatching, "Pack/RPUtility/RPUtlCollisionModel.cpp"),
@@ -1337,10 +1337,10 @@ config.libs = [
             Object(NonMatching, "Pack/RPUtility/RPUtlRand.cpp"),
             Object(NonMatching, "Pack/RPUtility/RPUtlModel.cpp"),
             Object(NonMatching, "Pack/RPUtility/RPUtlViewClipper.cpp"),
-            Object(not MatchingFor("RHAE01_01"), "Pack/RPUtility/RPUtlRandom.cpp"),
+            Object(Matching, "Pack/RPUtility/RPUtlRandom.cpp"),
             Object(NonMatching, "Pack/RPUtility/RPUtlMath.cpp"),
             Object(NonMatching, "Pack/RPUtility/RPUtlMapData.cpp"),
-            Object(not MatchingFor("RHAE01_01"), "Pack/RPUtility/RPUtlShadowDrawer.cpp"),
+            Object(Matching, "Pack/RPUtility/RPUtlShadowDrawer.cpp"),
             Object(NonMatching, "Pack/RPUtility/RPUtlObject.cpp"),
             Object(NonMatching, "Pack/RPUtility/RPUtl_801BFEA8.cpp"),
             Object(NonMatching, "Pack/RPUtility/RPUtl_801C0D90.cpp"),
