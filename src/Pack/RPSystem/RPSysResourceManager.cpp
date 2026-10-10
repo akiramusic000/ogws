@@ -259,6 +259,8 @@ void RPSysResourceManager::LoadStaticArchives() {
 #if defined(PACK_SPORTS)
     mpAppMiiManager = new (pResHeap) RPSportsAppMiiManager(pResHeap);
     mpAppMiiManager->LoadResource();
+#elif defined(PACK_PARTY)
+    mpAppMiiManager = NULL;
 #endif
 
     LoadMessageArchive();
