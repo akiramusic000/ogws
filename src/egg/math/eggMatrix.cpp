@@ -41,6 +41,100 @@ void Matrix34f::makeIdentity() {
     _00 = _11 = _22 = 1.0f;
 }
 
+void Matrix34f::makeSRT(const EGG::Vector3f& rScale, const EGG::Vector3f& rRot,
+                        const EGG::Vector3f& rTrans) {
+    float sinX = Math<float>::sin((double)rRot.x);
+    float sinY = Math<float>::sin((double)rRot.y);
+    float sinZ = Math<float>::sin((double)rRot.z);
+    float cosX = Math<float>::cos((double)rRot.x);
+    float cosY = Math<float>::cos((double)rRot.y);
+    float cosZ = Math<float>::cos((double)rRot.z);
+
+    _00 = rScale.x * cosY * cosZ;
+    _10 = rScale.x * cosY * sinZ;
+    _20 = rScale.x * -sinY;
+
+    _01 = rScale.y * sinX * sinY * cosZ - cosX * sinZ;
+    _11 = rScale.y * sinX * sinY * sinZ + cosX * cosZ;
+    _21 = rScale.y * sinX * cosY;
+
+    _02 = rScale.z * cosX * cosZ * sinY + sinX * sinZ;
+    _12 = rScale.z * cosX * sinZ * sinY - sinX * cosZ;
+    _22 = rScale.z * cosX * cosY;
+
+    _03 = rTrans.x;
+    _13 = rTrans.y;
+    _23 = rTrans.z;
+}
+
+void Matrix34f::makeRT(const EGG::Vector3f& rRot, const EGG::Vector3f& rTrans) {
+    float sinX = Math<float>::sin((double)rRot.x);
+    float sinY = Math<float>::sin((double)rRot.y);
+    float sinZ = Math<float>::sin((double)rRot.z);
+    float cosX = Math<float>::cos((double)rRot.x);
+    float cosY = Math<float>::cos((double)rRot.y);
+    float cosZ = Math<float>::cos((double)rRot.z);
+
+    _00 = cosY * cosZ;
+    _10 = cosY * sinZ;
+    _20 = -sinY;
+
+    _01 = sinX * sinY * cosZ - cosX * sinZ;
+    _11 = sinX * sinY * sinZ + cosX * cosZ;
+    _21 = sinX * cosY;
+
+    _02 = cosX * cosZ * sinY + sinX * sinZ;
+    _12 = cosX * sinZ * sinY - sinX * cosZ;
+    _22 = cosX * cosY;
+
+    _03 = rTrans.x;
+    _13 = rTrans.y;
+    _23 = rTrans.z;
+}
+
+void Matrix34f::makeR(const EGG::Vector3f& rRot) {
+    float sinX = Math<float>::sin((double)rRot.x);
+    float sinY = Math<float>::sin((double)rRot.y);
+    float sinZ = Math<float>::sin((double)rRot.z);
+    float cosX = Math<float>::cos((double)rRot.x);
+    float cosY = Math<float>::cos((double)rRot.y);
+    float cosZ = Math<float>::cos((double)rRot.z);
+
+    _00 = cosY * cosZ;
+    _10 = cosY * sinZ;
+    _20 = -sinY;
+
+    _01 = sinX * sinY * cosZ - cosX * sinZ;
+    _11 = sinX * sinY * sinZ + cosX * cosZ;
+    _21 = sinX * cosY;
+
+    _02 = cosX * cosZ * sinY + sinX * sinZ;
+    _12 = cosX * sinZ * sinY - sinX * cosZ;
+    _22 = cosX * cosY;
+
+    _03 = 0.0;
+    _13 = 0.0;
+    _23 = 0.0;
+}
+
+void Matrix34f::makeST(const EGG::Vector3f& scale, const EGG::Vector3f& trans) {
+    _00 = scale.x;
+    _10 = 0.0;
+    _20 = 0.0;
+
+    _01 = 0.0;
+    _11 = scale.y;
+    _21 = 0.0;
+
+    _02 = 0.0;
+    _12 = 0.0;
+    _22 = scale.z;
+
+    _03 = trans.x;
+    _13 = trans.y;
+    _23 = trans.z;
+}
+
 void Matrix34f::makeQ(const Quatf& rQuat) {
     f32 yy = 2.0f * rQuat.v.y * rQuat.v.y;
     f32 zz = 2.0f * rQuat.v.z * rQuat.v.z;
@@ -95,6 +189,10 @@ void Matrix34f::setAxisRotation(const Vector3f& rAxis, f32 angle) {
 
 void Matrix34f::loadPosMtx(u32 id) {
     GXLoadPosMtxImm(m, id);
+}
+
+void Matrix34f::multiplyTo(const Matrix34f& rRMtx, Matrix34f& rLMtx) const {
+    PSMTXConcat(m, rRMtx.m, rLMtx.m);
 }
 
 } // namespace EGG

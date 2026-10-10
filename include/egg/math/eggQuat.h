@@ -20,6 +20,8 @@ public:
     void set(f32 fw, f32 fx, f32 fy, f32 fz);
     void setAxisRotation(const Vector3f& rAxis, f32 angle);
 
+    Quatf conjugate() const;
+
 public:
     Vector3f v; // at 0x0
     f32 w;      // at 0xC

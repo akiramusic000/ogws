@@ -77,13 +77,23 @@ public:
         return Vector3f(x, y, z);
     }
 
+    void fromQuat(const Quatf& rQuat);
+    void toQuat(Quatf& rQuat) const;
+
     void makeIdentity();
 
+    void makeSRT(const EGG::Vector3f& rScale, const EGG::Vector3f& rRot,
+                 const EGG::Vector3f& rTrans);
+    void makeRT(const EGG::Vector3f& rRot, const EGG::Vector3f& rTrans);
+    void makeR(const EGG::Vector3f& rRot);
+    void makeST(const EGG::Vector3f& scale, const EGG::Vector3f& trans);
     void makeQ(const Quatf& rQuat);
     void makeS(const Vector3f& rScale);
 
     void setAxisRotation(const Vector3f& rAxis, f32 angle);
     void loadPosMtx(u32 id);
+
+    void multiplyTo(const Matrix34f& rRMtx, Matrix34f& rLMtx) const;
 };
 
 } // namespace EGG
