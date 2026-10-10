@@ -39,6 +39,20 @@ public:
     virtual ~RPSysNWC24Manager(); // at 0x8
 
     /**
+     * @brief Preprocesses arguments to commitMail
+     *
+     * @param pAltName Mail letter alt name
+     * @param pMsg Mail letter message (can be a format string)
+     * @param date Mail letter send date
+     * @param pAvatar Mii avatar to include
+     * @param argc Number of message format arguments
+     * @param ... Message format arguments
+     * @return Success
+     */
+    bool PreProcessEx(const wchar_t* pAltName, const wchar_t* pMsg,
+                      RPTime16 date, const RPSysAvatar* pAvatar, int argc, ...);
+
+    /**
      * @brief Attempts to commit a message to the Wii Message Board
      *
      * @param pWork Library work buffer

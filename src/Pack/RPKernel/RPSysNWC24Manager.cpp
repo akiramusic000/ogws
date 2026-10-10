@@ -57,6 +57,28 @@ RPSysNWC24Manager::RPSysNWC24Manager(EGG::Heap* pHeap) {
 RPSysNWC24Manager::~RPSysNWC24Manager() {}
 
 /**
+ * @brief Preprocesses arguments to commitMail
+ *
+ * @param pAltName Mail letter alt name
+ * @param pMsg Mail letter message (can be a format string)
+ * @param date Mail letter send date
+ * @param pAvatar Mii avatar to include
+ * @param argc Number of message format arguments
+ * @param ... Message format arguments
+ * @return Success
+ */
+bool RPSysNWC24Manager::PreProcessEx(const wchar_t* pAltName,
+                                     const wchar_t* pMsg, RPTime16 date,
+                                     const RPSysAvatar* pAvatar, int argc,
+                                     ...) {
+    va_list args;
+    va_start(args, pAvatar);
+    bool success = commitMail(pAltName, pMsg, date, pAvatar, argc, args);
+    va_end(args);
+    return success;
+}
+
+/**
  * @brief Attempts to commit a message to the Wii Message Board
  *
  * @param pAltName Mail letter alt name
