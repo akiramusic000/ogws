@@ -3031,6 +3031,7 @@ nw4r/g3d/g3d_scnrfl.cpp:
 Pack/RPGraphics/RPGrpCamera.cpp:
 	.text       start:0x801A6228 end:0x801A6DDC
 	.ctors      start:0x802E9D68 end:0x802E9D6C
+	.data       start:0x8034FA90 end:0x8034FAA0
 	.bss        start:0x80438CB0 end:0x80438F48
 	.sbss       start:0x8043C558 end:0x8043C560
 	.sdata2     start:0x8043E908 end:0x8043E940
@@ -3043,16 +3044,19 @@ Pack/RPGraphics/RPGrpLightManager.cpp:
 
 Pack/RPGraphics/RPGrpModel.cpp:
 	.text       start:0x801A77D8 end:0x801A7FA8
-	.sbss       start:0x8043C560 end:0x8043C578
+	.rodata     start:0x803181D0 end:0x803181E8
+	.data       start:0x8034FB28 end:0x8034FBC4
+	.sbss       start:0x8043C560 end:0x8043C57C
 	.sdata2     start:0x8043E940 end:0x8043E948
 
 Pack/RPGraphics/RPGrpModelAnm.cpp:
 	.text       start:0x801A7FA8 end:0x801A881C
+	.data       start:0x8034FBC8 end:0x8034FC50
 	.sdata2     start:0x8043E948 end:0x8043E950
 
 Pack/RPGraphics/RPGrpModelAnmImplement.cpp:
 	.text       start:0x801A881C end:0x801AA9C0
-	.rodata     start:0x803181E8 end:0x80318218
+	.data       start:0x8034FC50 end:0x8034FDB8
 	.sdata2     start:0x8043E950 end:0x8043E960
 
 Pack/RPGraphics/RPGrpModelImplement.cpp:
@@ -3063,6 +3067,7 @@ Pack/RPGraphics/RPGrpModelManager.cpp:
 
 Pack/RPGraphics/RPGrpModelResManager.cpp:
 	.text       start:0x801AC10C end:0x801ACBC0
+	.data       start:0x8034FEC0 end:0x8034FF70
 
 Pack/RPGraphics/RPGrpRenderer.cpp:
 	.text       start:0x801ACBC0 end:0x801ADC30
@@ -3077,14 +3082,17 @@ Pack/RPGraphics/RPGrpScreen.cpp:
 Pack/RPGraphics/RPGrpView.cpp:
 	.text       start:0x801ADDA8 end:0x801AEDDC
 	.ctors      start:0x802E9D74 end:0x802E9D78
+	.data       start:0x80350060 end:0x803500A4
 	.bss        start:0x80439030 end:0x80439088
 	.sdata2     start:0x8043E988 end:0x8043E9B8
 
 Pack/RPGraphics/RPGrpViewRender2D.cpp:
 	.text       start:0x801AEDDC end:0x801AEEB8
+	.data       start:0x803500A8 end:0x803500D4
 
 Pack/RPGraphics/RPGrpViewRender3D.cpp:
 	.text       start:0x801AEEB8 end:0x801AF110
+	.data       start:0x803500D8 end:0x80350104
 
 Pack/RPGraphics/RPGrpModelScene.cpp:
 	.text       start:0x801AF110 end:0x801AFC04
@@ -3094,9 +3102,11 @@ Pack/RPGraphics/RPGrpDrawPathLightMap.cpp:
 
 Pack/RPGraphics/RPGrpModelBoundingInfo.cpp:
 	.text       start:0x801AFD98 end:0x801AFE30
+	.data       start:0x803501A8 end:0x803501B4
 
 Pack/RPGraphics/RPGrpDrawPathShadowTexture.cpp:
 	.text       start:0x801AFE30 end:0x801AFEDC
+	.data       start:0x803501B8 end:0x803501D0
 
 Pack/RPGraphics/RPGrpShadowTexture.cpp:
 	.text       start:0x801AFEDC end:0x801AFFA0
@@ -3106,19 +3116,23 @@ Pack/RPGraphics/RPGrpModelMaterial.cpp:
 
 Pack/RPGraphics/RPGrpTexture.cpp:
 	.text       start:0x801B1418 end:0x801B1574
+	.data       start:0x803501E0 end:0x803501EC
 
 Pack/RPGraphics/RPGrpCaptureTexture.cpp:
 	.text       start:0x801B15B8 end:0x801B1820
+	.data       start:0x803501F0 end:0x803501FC
 	.sdata2     start:0x8043E9C8 end:0x8043E9D0
 
 Pack/RPGraphics/RPGrpProjectionObject.cpp:
 	.text       start:0x801B1820 end:0x801B19E8
+	.data       start:0x80350200 end:0x8035020C
 	.sdata2     start:0x8043E9D0 end:0x8043E9D8
 
 Pack/RPGraphics/RPGrpModelRfl.cpp:
 	.text       start:0x801B19E8 end:0x801B2B34
 	.ctors      start:0x802E9D78 end:0x802E9D7C
 	.rodata     start:0x803182B0 end:0x803182C0
+	.data       start:0x80350210 end:0x803502E0
 	.bss        start:0x80439088 end:0x804390E0
 	.sdata      start:0x8043B358 end:0x8043B360
 	.sdata2     start:0x8043E9D8 end:0x8043EA18
